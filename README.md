@@ -8,10 +8,12 @@ The Dockerfile and /dckr folder define an interface and enforce the binding of a
 Interface
 ---------
 
-1. Three paths are mounted to directories of the host system:
+1. Three paths in the container are mounted to directories of the host system:
 	
 	a) /dckr/mnt/in 	-- mounted as read-only, contains input files to the container
+
 	b) /dckr/mnt/ref	-- mounted as read-write, contains provided and user-generated reference data
+
 	c) /dckr/mnt/out	-- mounted as read-write, contains output files from the container
 
 2. One path contains shell scripts that can be executed (called "tasks"):
