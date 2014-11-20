@@ -1,11 +1,9 @@
-docker-camibase
+base-image
 ==========
 
-docker-camibase is a Docker container which serves as basis for building user-specific containers.
+base is a Docker image which serves as basis for building user-specific containers. The interface it simply defined in the interface.conf file.
 
-The Dockerfile and /dckr folder define an interface and enforce the binding of all the interchange directories in the container. They also define tasks which can be specified as the first docker run command line parameter. The Dockerfile sets the default user which is used to run all the commands inside the container to 'nobody' because this seems to be the only user with a consistent UID mapping from host to container for most distributions (besides the default user root who can do anything to the host filesystem). This is a precaution because currently there is no user remapping for mounted host directories for Docker to prevent processes in the host to modify or delete files on the host filesystem.
-
-Interface
+Usage
 ---------
 
 1. Mount point of host system directories: /dckr/mnt
