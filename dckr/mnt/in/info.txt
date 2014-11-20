@@ -1,0 +1,2 @@
+This folder will be bound to a host folder which contains the input to
+your software. This is mounted read-only.

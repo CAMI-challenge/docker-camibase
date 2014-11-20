@@ -1,0 +1,1 @@
+/opt/my-software/01script.sh "$DCKR_MNT"/ref "$DCKR_MNT"/in/sample.fna

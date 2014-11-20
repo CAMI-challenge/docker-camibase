@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -o errexit
+set -o nounset
+
+# variables
+task=${1:-default}
+
+# task is defined?
+taskfile="$DCKR_TASKS/$task"
+if ! test -r "$taskfile"; then
+  echo "Task '$task' not defined. Valid tasks are:"
+  cd "$DCKR_TASKS"
+  find -L -maxdepth 1 -type f -printf "%f\n" | sort -u
+  exit 1
+fi
+
+# interface bound?
+for ifc in $(ls -d "$DCKR_MNT"/*/ 2>/dev/null); do
+  if ! mountpoint -q "$ifc"; then
+    echo "Abort, interface '$ifc' not bound." 1>&2
+    exit 2
+  fi
+done
+
+# logfile writable?
+if ! touch "$DCKR_LOG" 2>/dev/null; then
+  echo "Abort, logfile '$DCKR_LOG' not writable." 1>&2
+  exit 3
+fi
+
+(. "$taskfile") 2>&1 | tee "$DCKR_LOG"
