@@ -4,7 +4,8 @@ set -o errexit
 set -o nounset
 
 # Variables
-task=${1:-default}; shift
+task=${1:-default}
+test -n "${1:-}" && shift
 export DCKR_ARGS="$@"
 
 # Task is defined?
