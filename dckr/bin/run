@@ -30,3 +30,4 @@ if ! touch "$DCKR_LOG" 2>/dev/null; then
 fi
 
 (. "$taskfile") 2>&1 | tee "$DCKR_LOG"
+

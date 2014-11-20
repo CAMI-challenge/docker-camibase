@@ -1,2 +1,0 @@
-This folder will be bound to a host folder in which the output files
-will be written. This must be mounted read-write.

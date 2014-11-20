@@ -1,3 +1,0 @@
-This folder will be bound to a host folder which contains reference
-sequences.
-This mount is read-write for contructing your own reference .

@@ -8,21 +8,11 @@ The Dockerfile and /dckr folder define an interface and enforce the binding of a
 Interface
 ---------
 
-1. Three paths in the container are mounted to directories of the host system:
+1. Mount point of host system directories: /dckr/mnt
 	
-	a) /dckr/mnt/in 	-- mounted as read-only, contains input files to the container
+2. Shell scripts that can be executed (called "tasks"): /dckr/etc/tasks.d/
 
-	b) /dckr/mnt/ref	-- mounted as read-write, contains provided and user-generated reference data
-
-	c) /dckr/mnt/out	-- mounted as read-write, contains output files from the container
-
-2. One path contains shell scripts that can be executed (called "tasks"):
-
-	/dckr/etc/tasks.d/
-
-3. A default process which is executed on the startup of the container. 
-
-	/dckr/bin/run
+3. Default process which is executed on container startup: /dckr/bin/run
 
 
 Usage
@@ -34,7 +24,7 @@ Usage
 
 2. Build the Docker image
 
-        docker build -t="docker-camibase" docker-camibase
+        docker build -t="cami/base" docker-camibase
 
 3. Create the interface
 
