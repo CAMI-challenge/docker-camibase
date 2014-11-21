@@ -17,6 +17,3 @@ ENV DCKR_CACHE $DCKR_MNT/cache
 
 # folder containing all data uploaded by the user
 ENV DCKR_USERREF $DCKR_MNT/userref
-
-# number of thread to be used by processes running in the container
-ENV DCKR_THREADS 1
