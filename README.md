@@ -10,13 +10,13 @@ Variables
 
 ```$DCKR_OUTFILE```: single output file
 
-```$DCKR_REF```: folder containig provided reference data(bases)
+```$DCKR_CAMIREF```: folder containig provided reference data(bases)
 
-```$DCKR_CACHE```: folder to save data which is persistent between container execution
+```$DCKR_CACHE```: folder to save data which is persistent between consecutive container executions
 
-```$DCKR_UPLOAD```: folder containing all data uploaded by the user
+```$DCKR_USERREF```: folder containing all data uploaded/provided by the user
 
-```$DCKR_THREADS```: number of thread to be used by processes running in the container
+```$DCKR_THREADS```: number of threads to be used by processes running in the container
 
 ```$DCKR_USER```: optional non-root user to be used in the container (Dockerfile statemente USER) 
 
