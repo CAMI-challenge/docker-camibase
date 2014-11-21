@@ -6,25 +6,23 @@ camibase is a Docker image which serves as basis for building user-specific cont
 Variables
 -----
 
-# a single input FASTA file
-$DCKR_INFILE
+```$DCKR_INFILE```: single input FASTA file
 
-# a single output file
-$DCKR_OUTFILE
+```$DCKR_OUTFILE```: single output file
 
-# a folder containig provided reference data(bases)
-$DCKR_REF
+```$DCKR_REF```: folder containig provided reference data(bases)
 
-# a folder to save data which is persistent between container execution
-$DCKR_CACHE
+```$DCKR_CACHE```: folder to save data which is persistent between container execution
 
-# a folder containing all data uploaded by the user
-$DCKR_UPLOAD
+```$DCKR_UPLOAD```: folder containing all data uploaded by the user
 
-# the number of thread to be used by processes running in the container
-$DCKR_THREADS
+```$DCKR_THREADS```: number of thread to be used by processes running in the container
+
+```$DCKR_USER```: optional non-root user to be used in the container (Dockerfile statemente USER) 
 
 Usage
 -----
-
-Run Docker container using the following run command.
+1. Pull container cami/base
+2. Add/install software in your container
+3. Add a file with the commands to run as $DCKR_TASKS/mytask (using the defined variables)
+4. Run the resulting docker container using ```docker run mycontainer mytask```
