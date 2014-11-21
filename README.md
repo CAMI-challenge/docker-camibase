@@ -14,7 +14,7 @@ Usage
 Variables for use in container
 -----
 
-Please only use the following environment variables in your scripts and applications. Do not use absolute paths except for mounting the host volumes to the container (this is a limitation of the docker commmand). To see the actual content of these variables, etc. for mounting, see the output of ```docker run myimage --env```.
+Please only use the following environment variables in your scripts and applications. Do not use absolute paths except for mounting the host volumes to the container (this is a limitation of the docker commmand). To see the actual content of these variables, etc. for mounting, see the output of ```docker run cami/base --list-mount```. To see an exhaustive list of defined variables, see the output of ```docker run cami/base --list-var```.
 
 ```$DCKR_INFILE```: single input FASTA file
 
