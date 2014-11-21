@@ -1,36 +1,30 @@
-base-image
+camibase
 ==========
 
-base is a Docker image which serves as basis for building user-specific containers. The interface it simply defined in the interface.conf file.
+camibase is a Docker image which serves as basis for building user-specific containers.
 
-Usage
----------
+Variables
+-----
 
-1. Mount point of host system directories: /dckr/mnt
-	
-2. Shell scripts that can be executed (called "tasks"): /dckr/etc/tasks.d/
+# a single input FASTA file
+$DCKR_INFILE
 
-3. Default process which is executed on container startup: /dckr/bin/run
+# a single output file
+$DCKR_OUTFILE
 
+# a folder containig provided reference data(bases)
+$DCKR_REF
+
+# a folder to save data which is persistent between container execution
+$DCKR_CACHE
+
+# a folder containing all data uploaded by the user
+$DCKR_UPLOAD
+
+# the number of thread to be used by processes running in the container
+$DCKR_THREADS
 
 Usage
 -----
 
-1. Get Docker build files
-
-        git clone https://github.com/CAMI-challenge/docker-camibase.git
-
-2. Build the Docker image
-
-        docker build -t="cami/base" docker-camibase
-
-3. Create the interface
-
-        mkdir in out ref  # directies which are mounted in the container
-        mv mysample.fna in/sample.fna  # move your sample to the in folder
-        sudo chown -R nobody in out ref  # make read-writable for user nobody
-
-4. Run Docker container
-
-        docker run -v $PWD/in:/dckr/mnt/in:ro -v $PWD/ref:/dckr/mnt/ref:rw -v $PWD/out:/dckr/mnt/out:rw fungs/taxator-tk download-refpack
-
+Run Docker container using the following run command.
