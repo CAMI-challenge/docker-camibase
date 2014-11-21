@@ -10,13 +10,13 @@ ENV $DCKR_INFILE $DCKR_MNT/input/sample.fna
 ENV $DCKR_OUTFILE $DCKR_MNT/output/sample.out
 
 # a folder containig provided reference data(bases)
-ENV $DCKR_REF $DCKR_MNT/camiref
+ENV $DCKR_CAMIREF $DCKR_MNT/camiref
 
 # a folder to save data which is persistent between container execution
 ENV $DCKR_CACHE $DCKR_MNT/cache
 
 # a folder containing all data uploaded by the user
-ENV $DCKR_UPLOAD $DCKR_MNT/upload
+ENV $DCKR_USERREF $DCKR_MNT/userref
 
 # the number of thread to be used by processes running in the container
 ENV $DCKR_THREADS 1
